@@ -1,0 +1,85 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context="com.example.andtest.MainActivity" >
+
+    <!--
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/search_bg"
+        android:drawableRight="@drawable/sort_c"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" />    -->
+
+    <TextView
+        android:id="@+id/tv_top_show"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_bg_selec"
+        android:clickable="true"
+        android:onClick="toJson"
+        android:padding="20dp"
+        android:text="@string/hello_world" />
+
+    <RelativeLayout
+        android:id="@+id/register_detail_qudao_sell_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/register_detail_qudao_sell_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:text="旧车销售渠道" />
+
+        <TextView
+            android:id="@+id/tv_register_detail_sell_qudao_choose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:onClick="register_detail_layout"
+            android:padding="10dp"
+            android:text="选择" />
+
+        <TextView
+            android:id="@+id/register_detail_sell_qudao_text_show"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:layout_toLeftOf="@id/tv_register_detail_sell_qudao_choose"
+            android:layout_toRightOf="@id/register_detail_qudao_sell_text"
+            android:gravity="center"
+            android:onClick="register_detail_layout"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:text="213123123" />
+
+    </RelativeLayout>
+
+    <com.example.andtest.customview.bussiness.MyScrollView
+        android:id="@+id/scroll_self_test"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:id="@+id/linear_scroll_child"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+        </LinearLayout>
+    </com.example.andtest.customview.bussiness.MyScrollView>
+
+</LinearLayout>

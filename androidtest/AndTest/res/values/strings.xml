@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AndTest</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="json">{"success": true, "status":100,  "ConditionsList":[ { "CarConditionsModel": { "Id": 0 }, "OldCarlist":[ { "CarSourceID": 9132751 } ] },{"CarConditionsModel": { "Id":0 },"OldCarlist":[ {"CarSourceID":1494}]}  ]}</string>
+</resources>
