@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/white" >
+
+    <RelativeLayout
+        android:id="@+id/relative_gallery_top_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/title"
+        android:padding="5dp" >
+		
+        <Button
+            android:id="@+id/return_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/return_btn"
+            android:visibility="visible" />
+        <!-- 正显示第几张图片 -->
+        <TextView
+            android:id="@+id/tv_gallery_show_num_per"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="2/6"
+            android:textColor="@color/black_font"
+            android:textSize="@dimen/standard_padding"
+            />
+        
+        <TextView
+            android:id="@+id/savePic"
+            android:layout_width="wrap_content"
+            android:layout_height="30dip"
+            android:layout_alignParentRight="true"
+            android:layout_margin="5dip"
+            android:gravity="center"
+            android:text="@string/save"
+            android:textColor="@color/grey3" />
+    </RelativeLayout>
+
+    <ru.truba.touchgallery.GalleryWidget.GalleryViewPager
+        android:id="@+id/viewer"
+        android:layout_above="@+id/relative_bottom_control"
+        android:layout_below="@+id/relative_gallery_top_title"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@android:color/transparent" />
+    
+    <RelativeLayout 
+        android:id="@+id/relative_bottom_control"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#b0000000"
+        android:padding="10dp">
+        
+        <com.gc.jzgpgswl.view.horizontallist.HorizontalListView
+            android:id="@+id/self_gall_bottom_img_show"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            >
+        </com.gc.jzgpgswl.view.horizontallist.HorizontalListView>
+        
+    </RelativeLayout>
+
+</RelativeLayout>

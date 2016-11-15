@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black_font">#ff000000</color>
+    <color name="grey1">#666666</color>
+    <color name="grey2">#ededed</color>
+    <color name="grey3">#333333</color>
+    <color name="grey4">#999999</color>
+    <color name="list_click">#FFCC00</color>
+    <color name="price_color">#fc8318</color>
+    <color name="categroy_title">#3399cc</color>
+    <color name="title">#f5f5f5</color>
+    <color name="bg">#f4f4f4</color>
+    <color name="hint_color">#dddddd</color>
+    <color name="register_prompt">#bbbbbb</color>
+    <color name="text_blue">#009AF3</color>
+    <color name="text_green">#00CF37</color>
+
+    <!-- 文本输入框输入字体颜色 -->
+    <color name="dark_grey_text">#31455f</color>
+    <!-- 浅灰色text -->
+    <color name="light_grey_text">#b4bbc4</color>
+    <!-- 浅蓝色文字颜色 -->
+    <color name="blue_wathet_textcolor">#ff4587C3</color>
+    <!-- 绿色文字颜色 -->
+    <color name="green_textcolor">#20B2AA</color>
+    <!-- 背景颜色 -->
+    <color name="bg_grey">#F2F5F7</color>
+    <!-- 标题背景色值 -->
+    <color name="title_bg">#ff31455F</color>
+    
+    <!-- 透明 -->
+    <color name="transparent">#00000000</color>
+    <!-- 首页背景 -->
+    <color name="global_bg">#f2f9fe</color>
+    <!-- 绿色 -->
+    <color name="green">#44ca09</color>
+    <!-- 橙色 -->
+    <color name="orange">#ff7200</color>
+    <!-- 蓝色 -->
+    <color name="blue">#1a9bf5</color>
+    <!-- 红色 -->
+    <color name="red">#ff5252</color>
+    <!-- 帖子内容背景 -->
+    <color name="topic_content_bg">#f8f8f8</color>
+    <!-- 多选背景颜色 -->
+    <color name="orange2">#FF6400</color>
+    <!-- 车源标签北京色 -->
+    <color name="orange_light">#FFE1CC</color>
+
+    <!-- dialog背景颜色 -->
+    <color name="dialog_bg_half_color">#99000000</color>
+    
+    
+    <!-- 传统模式item字体颜色 -->
+    <color name="tradition_item_text_color">#FF000000</color>
+    
+    <drawable name="tradition_radio_normal">#00000000</drawable>
+    
+    <!-- 车辆按钮颜色 -->
+	<color name="cars_blue">#0083E2</color>
+	
+	<!-- 材料上传item -->
+	<color name="text_color">#3c4a55</color>
+</resources>

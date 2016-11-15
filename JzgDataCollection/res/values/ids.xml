@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+    <item name="login_suc" type="id"/><!-- 登录成功 -->
+    <item name="login_fail" type="id"/><!-- 登录失败 -->
+    <item name="post_suc" type="id"/><!-- 提交成功 -->
+    <item name="post_fail" type="id"/><!-- 提交失败 -->
+    <item name="vin_submit_suc" type="id"/><!-- vin提交成功 -->
+    <item name="vin_submit_fail" type="id"/><!-- vin提交失败 -->
+    <item name="photo" type="id"/><!-- 相册选择 -->
+    <item name="take" type="id"/><!-- 拍照 -->
+    <item name="upLoadPicSuc" type="id"/><!-- 上传图片成功 -->
+    <item name="upLoadPicFail" type="id"/><!-- 上传图片失败 -->
+    <item name="car_canpei_Suc" type="id"/><!-- 获取车辆参配成功 -->
+    <item name="car_canpei_Fail" type="id"/><!-- 获取车辆参配失败 -->
+    <item name="base_info_save_Suc" type="id"/><!-- 基本信息保存成功 -->
+    <item name="base_info_save_Fail" type="id"/><!-- 基本信息保存失败 -->
+    <item name="QueryValuationSuc" type="id"/><!-- 查询估值成功 -->
+    <item name="QueryValuationFail" type="id"/><!-- 查询估值失败 -->
+    <item name="save_car_detail_Suc" type="id"/><!-- 编辑保存车辆详情成功 -->
+    <item name="save_car_detail_Fail" type="id"/><!-- 编辑保存车辆详情失败 -->
+    <item name="renzheng_Suc" type="id"/><!-- 详情认证成功 -->
+    <item name="renzheng_Fail" type="id"/><!-- 详情认证失败 -->
+    
+    <item name="self_car_source_list_title" type="id"></item>
+    
+     <item name="net_error" type="id"/><!-- 查询估值失败 -->
+    <!-- 获取资讯 -->
+	<item name="requestNewsList" type="id"/>
+	<!-- 获取公告 -->
+	<item name="requestNoticeList" type="id"/>
+	<!-- 获取私信 -->
+	<item name="requestMailList" type="id"/>
+	<!-- 获取私信详情 -->
+	<item name="requestMaildetail" type="id"/>
+	<!-- 获取车辆查询列表 -->
+	<item name="requestCarList" type="id"/>
+	<!-- 获取车源列表-->
+	<item name="requestCarSourceListSuc" type="id"/>
+	<item name="requestCarSourceListFail" type="id"/>
+	<!-- 获取车源列表红点是否隐藏-->
+	<item name="requestCarSourceIfseeSuc" type="id"/>
+	<item name="requestCarSourceIfseeFail" type="id"/>
+	<!-- 获取车龄里程价格 -->
+	<item name="requestCarAgePriceMileage" type="id"/>
+	<!-- 获取热门品牌 -->
+	<item name="requestHotCarList" type="id"/>
+	<!-- 获取品牌列表 -->
+	<item name="requestCarBrandList" type="id"/>
+	<!-- 获取车系列表 -->
+	<item name="requestCarModeList" type="id"/>
+	<!-- 获取市场列表 -->
+	<item name="requestCarMarketList" type="id"/>
+	<!-- 获取省列表 -->
+	<item name="requestProvinceList" type="id"/>
+	<!-- 获取城市列表 -->
+	<item name="requestCityList" type="id"/>
+	<!-- 关键字自动补全-->
+	<item name="getAutoComTextSuc" type="id"/>
+	<item name="getAutoComTextFail" type="id"/>
+	<!-- 车源详情-->
+	<item name="requestCarSourceDetail" type="id"/>
+	<!-- 保存图片 -->
+	<item name="getBitmapByUrl" type="id"/>
+	
+	<item name="car_source_list_title" type="id"></item>
+	
+	<item name="makelist" type="id"/>
+    <item name="modellist" type="id"/>
+    <item name="stylelist" type="id"/>
+    <item name="hotcarlist" type="id"/>
+    <item name="car_detail" type="id"/>
+    <item name="carDetailSuc" type="id"/>
+    <item name="close_dialog" type="id"/>
+    <item name="net_error_back" type="id"></item>
+    
+	<item name="requestcardetailSuc" type="id"/>
+    <item name="requestcardetailFail" type="id"/>
+    <item name="requestcartobuySuc" type="id"/>
+    <item name="requestcartobuyFail" type="id"/>
+    <item name="refreshcardetailFragment" type="id"/>
+    <item name="refreshcardetailbaseinfoFragment" type="id"/>
+    <item name="refreshcardetailkehuFragment" type="id"/>
+    <item name="refreshcardetailchekuangFragment" type="id"/>
+    <item name="refreshcardetailpicFragment" type="id"/>
+    <item name="refreshcardetailpriceFragment" type="id"/>
+    
+    <item name="QueryCarInfoSuc" type="id"/>
+    <item name="QueryCarInfoFail" type="id"/>
+    <item name="provinceList" type="id"/>
+    <item name="cityList" type="id"/>
+    <item name="modifyCity" type="id"/>
+    <item name="submitPriceSuc" type="id"/>
+    <item name="submitPriceFail" type="id"/>
+    <item name="modifyPass" type="id"/>
+    <item name="delCollectSuc" type="id"/>
+    <item name="carSourceListByUserSuc" type="id"/>
+    <item name="carCollectionList_suc" type="id"/><!-- 查询收藏列表成功 -->
+    <item name="carCollectionList_fail" type="id"/><!-- 查询收藏列表失败 -->
+    <item name="delCollectionList_suc" type="id"/><!-- 删除收藏列表成功 -->
+    <item name="delCollectionList_fail" type="id"/><!-- 删除收藏列表失败 -->
+    
+    <item name="addCollectSuc" type="id"/>
+    <item name="addCollectfail" type="id"/>
+</resources>

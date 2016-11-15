@@ -1,0 +1,662 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_bg"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/table_height"
+        android:background="@color/title"
+        android:padding="10dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="价格调整"
+            android:textColor="@color/black_font"
+            android:textSize="@dimen/standard_padding" />
+
+        <TextView
+            android:id="@+id/btn_title_right_more"
+            style="@style/small_dark_grey_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="8dp"
+            android:text="跳过" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:background="@drawable/long_line" />
+
+    <LinearLayout
+        android:id="@+id/linear_adjust_price_top_show"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp" >
+
+        <TextView
+            android:id="@+id/tv_adjust_price_title_perleft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="100"
+            android:textColor="@color/green" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/tv_adjust_price_title_perright"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="300"
+            android:textColor="@color/red" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="本期调价时间:"
+            android:textColor="@color/red" />
+
+        <TextView
+            android:id="@+id/tv_adjust_price_title_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2016.10.12-2016.10.22"
+            android:textColor="@color/red" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:background="@drawable/long_line" />
+
+    <RelativeLayout
+        android:id="@+id/rel_adjust_price_null_show"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/tv_adjust_price_null_click"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tv_adjust_price_null_show"
+            android:layout_centerInParent="true"
+            android:drawableLeft="@drawable/refresh_adjust"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="点击刷新"
+            android:textColor="@color/grey3" />
+
+        <TextView
+            android:id="@+id/tv_adjust_price_null_show"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="本期价格已调整完成！"
+            android:textColor="@color/grey3" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scroll_adjust_price_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/main_bg"
+            android:orientation="vertical" >
+
+            <!-- 地区 -->
+
+            <RelativeLayout
+                android:id="@+id/valuation_place_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp" >
+
+                <ImageView
+                    android:id="@+id/valuation_place_item_bj"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/valuation_item_bj" />
+
+                <ImageView
+                    android:id="@+id/valuation_place_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/valuation_place_item_bj"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/valuation_item_right_width"
+                    android:src="@drawable/diqu" />
+
+                <com.jzg.jzgcarsource.view.FloatLabelLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_toRightOf="@id/valuation_place_icon"
+                    app:floatLabelTextAppearance="@style/TextAppearance.YourApp.FloatLabel" >
+
+                    <EditText
+                        android:id="@+id/tv_adjust_price_address"
+                        android:textSize="@dimen/jzg_common_size"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/valuation_place_icon"
+                        android:background="@null"
+                        android:hint="上牌地区"
+                        android:inputType="none"
+                        android:editable="false"
+                        android:paddingLeft="@dimen/valuation_item_right_width"
+                        android:paddingRight="@dimen/valuation_item_right_width"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="@color/grey3" />
+                </com.jzg.jzgcarsource.view.FloatLabelLayout>
+            </RelativeLayout>
+            <!-- 车辆信息 -->
+
+            <RelativeLayout
+                android:id="@+id/valuation_car_type_edit_RelativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp" >
+
+                <ImageView
+                    android:id="@+id/valuation_car_item_bj"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/valuation_item_bj" />
+
+                <ImageView
+                    android:id="@+id/valuation_car_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/valuation_car_item_bj"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/valuation_item_right_width"
+                    android:src="@drawable/valuation_car_icon" />
+
+                <com.jzg.jzgcarsource.view.FloatLabelLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_toRightOf="@id/valuation_car_icon"
+                    app:floatLabelTextAppearance="@style/TextAppearance.YourApp.FloatLabel" >
+
+                    <EditText
+                        android:textSize="@dimen/jzg_common_size"
+                        android:id="@+id/tv_adjust_price_fullname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/valuation_car_icon"
+                        android:background="@null"
+                        android:hint="车辆信息"
+                        android:inputType="none"
+                        android:editable="false"
+                        android:ellipsize="start"
+                        android:paddingLeft="@dimen/valuation_item_right_width"
+                        android:paddingRight="@dimen/valuation_item_right_width"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="@color/grey3" />
+                </com.jzg.jzgcarsource.view.FloatLabelLayout>
+            </RelativeLayout>
+            <!-- 上牌时间 -->
+
+            <RelativeLayout
+                android:id="@+id/valuation_time_item_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp" >
+
+                <ImageView
+                    android:id="@+id/valuation_time_item_bj"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:src="@drawable/valuation_item_bj" />
+
+                <ImageView
+                    android:id="@+id/valuation_time_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/valuation_time_item_bj"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/valuation_item_right_width"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:src="@drawable/valuation_time_icon" />
+
+                <com.jzg.jzgcarsource.view.FloatLabelLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_toRightOf="@id/valuation_time_icon"
+                    app:floatLabelTextAppearance="@style/TextAppearance.YourApp.FloatLabel" >
+
+                    <EditText
+                        android:textSize="@dimen/jzg_common_size"
+                        android:id="@+id/tv_adjust_price_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/valuation_time_icon"
+                        android:background="@null"
+                        android:hint="上牌时间"
+                        android:inputType="none"
+                        android:editable="false"
+                        android:paddingLeft="@dimen/valuation_item_right_width"
+                        android:paddingRight="@dimen/valuation_item_right_width"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="@color/grey3" />
+                </com.jzg.jzgcarsource.view.FloatLabelLayout>
+            </RelativeLayout>
+
+            <!-- 行驶里程 -->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp" >
+
+                <ImageView
+                    android:id="@+id/valuation_mileage_item_bj"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/valuation_item_bj" />
+
+                <ImageView
+                    android:id="@+id/valuation_mileage_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/valuation_mileage_item_bj"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/valuation_item_right_width"
+                    android:src="@drawable/valuation_mileage" />
+
+                <TextView
+                    android:id="@+id/valuation_mileage_right_text"
+                    style="@style/common_light_grey_text_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignRight="@id/valuation_mileage_item_bj"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/valuation_item_right_width"
+                    android:src="@drawable/rightjt_2x"
+                    android:text="万公里" />
+
+                <com.jzg.jzgcarsource.view.FloatLabelLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_toRightOf="@id/valuation_mileage_icon"
+                    app:floatLabelTextAppearance="@style/TextAppearance.YourApp.FloatLabel" >
+
+                    <EditText
+                        android:textSize="@dimen/jzg_common_size"
+                        android:id="@+id/tv_adjust_price_mile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/valuation_mileage_icon"
+                        android:background="@null"
+                        android:hint="行驶里程"
+                        android:inputType="none"
+                        android:editable="false"
+                        android:paddingLeft="@dimen/valuation_item_right_width"
+                        android:paddingRight="@dimen/valuation_item_right_width"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="@color/grey3" />
+                </com.jzg.jzgcarsource.view.FloatLabelLayout>
+            </RelativeLayout>
+
+            <!-- 颜色 -->
+
+            <RelativeLayout
+                android:id="@+id/relative_adjust_price_carclor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp" >
+
+                <ImageView
+                    android:id="@+id/valuation_colorcar_item_bj"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/valuation_item_bj" />
+
+                <ImageView
+                    android:id="@+id/valuation_colorcar_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/valuation_colorcar_item_bj"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/valuation_item_right_width"
+                    android:src="@drawable/laiyuan" />
+
+                <TextView
+                    android:id="@+id/valuation_colorcar_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/valuation_item_right_width"
+                    android:layout_toRightOf="@id/valuation_colorcar_icon"
+                    android:textSize="20sp" />
+                
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignRight="@id/valuation_colorcar_item_bj"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/valuation_item_right_width"
+                    android:src="@drawable/rightjt_2x" />
+
+                <com.jzg.jzgcarsource.view.FloatLabelLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_toRightOf="@id/valuation_colorcar_icon"
+                    app:floatLabelTextAppearance="@style/TextAppearance.YourApp.FloatLabel" >
+
+                    <EditText
+                        android:id="@+id/valuation_colorcar_type_edit"
+                        style="@style/common_edit_input_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/valuation_item_right_width"
+                        android:layout_marginRight="@dimen/valuation_item_right_width"
+                        android:background="@null"
+                        android:hint="车辆颜色"
+                        android:inputType="numberDecimal"
+                        android:maxLength="6"
+                        android:paddingLeft="@dimen/valuation_item_right_width"
+                        android:paddingRight="@dimen/valuation_item_right_width"
+                        android:singleLine="true" >
+                    </EditText>
+                </com.jzg.jzgcarsource.view.FloatLabelLayout>
+            </RelativeLayout>
+
+            <!-- 车况级别 -->
+
+            <RelativeLayout
+                android:id="@+id/relative_adjust_price_carlevel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp" >
+
+                <ImageView
+                    android:id="@+id/valuation_levelcar_item_bj"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/valuation_item_bj" />
+
+                <ImageView
+                    android:id="@+id/valuation_levelcar_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/valuation_levelcar_item_bj"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/valuation_item_right_width"
+                    android:src="@drawable/laiyuan" />
+
+                <TextView
+                    android:id="@+id/valuation_levelcar_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/valuation_item_right_width"
+                    android:layout_toRightOf="@id/valuation_levelcar_icon"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignRight="@id/valuation_levelcar_item_bj"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/valuation_item_right_width"
+                    android:src="@drawable/rightjt_2x" />
+                
+                <com.jzg.jzgcarsource.view.FloatLabelLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_toRightOf="@id/valuation_levelcar_icon"
+                    app:floatLabelTextAppearance="@style/TextAppearance.YourApp.FloatLabel" >
+
+                    <EditText
+                        android:id="@+id/valuation_levelcar_type_edit"
+                        style="@style/common_edit_input_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/valuation_item_right_width"
+                        android:layout_marginRight="@dimen/valuation_item_right_width"
+                        android:background="@null"
+                        android:hint="车况级别"
+                        android:inputType="numberDecimal"
+                        android:maxLength="6"
+                        android:paddingLeft="@dimen/valuation_item_right_width"
+                        android:paddingRight="@dimen/valuation_item_right_width"
+                        android:singleLine="true" >
+                    </EditText>
+                </com.jzg.jzgcarsource.view.FloatLabelLayout>
+            </RelativeLayout>
+            <!-- 收购价格 -->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp" >
+
+                <ImageView
+                    android:id="@+id/valuation_jiage_item_bj"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/valuation_item_bj" />
+
+                <ImageView
+                    android:id="@+id/valuation_jiage_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/valuation_jiage_item_bj"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/valuation_item_right_width"
+                    android:src="@drawable/jiage" />
+
+                <TextView
+                    android:id="@+id/valuation_jiage_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/valuation_item_right_width"
+                    android:layout_toRightOf="@id/valuation_jiage_icon" />
+
+                <TextView
+                    android:id="@+id/valuation_jiage_right_text"
+                    style="@style/common_light_grey_text_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignRight="@id/valuation_jiage_item_bj"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/valuation_item_right_width"
+                    android:src="@drawable/rightjt_2x"
+                    android:text="万元" />
+
+                <com.jzg.jzgcarsource.view.FloatLabelLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_toLeftOf="@id/valuation_jiage_right_text"
+                    android:layout_toRightOf="@id/valuation_jiage_icon"
+                    app:floatLabelTextAppearance="@style/TextAppearance.YourApp.FloatLabel" >
+
+                    <EditText
+                        android:id="@+id/valuation_jiage_edit"
+                        style="@style/common_edit_input_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/valuation_item_right_width"
+                        android:layout_marginRight="@dimen/valuation_item_right_width"
+                        android:background="@null"
+                        android:hint="收购价格"
+                        android:inputType="numberDecimal"
+                        android:maxLength="6"
+                        android:paddingLeft="@dimen/valuation_item_right_width"
+                        android:paddingRight="@dimen/valuation_item_right_width"
+                        android:singleLine="true" >
+                    </EditText>
+                </com.jzg.jzgcarsource.view.FloatLabelLayout>
+            </RelativeLayout>
+            <!-- 销售价格 -->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp" >
+
+                <ImageView
+                    android:id="@+id/valuation_xiaoshoujiage_item_bj"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/valuation_item_bj" />
+
+                <ImageView
+                    android:id="@+id/valuation_xiaoshoujiage_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/valuation_xiaoshoujiage_item_bj"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/valuation_item_right_width"
+                    android:src="@drawable/jiage" />
+
+                <TextView
+                    android:id="@+id/valuation_xiaoshoujiage_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/valuation_item_right_width"
+                    android:layout_toRightOf="@id/valuation_xiaoshoujiage_icon" />
+
+                <TextView
+                    android:id="@+id/valuation_xiaoshoujiage_right_text"
+                    style="@style/common_light_grey_text_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignRight="@id/valuation_xiaoshoujiage_item_bj"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/valuation_item_right_width"
+                    android:src="@drawable/rightjt_2x"
+                    android:text="万元" />
+
+                <com.jzg.jzgcarsource.view.FloatLabelLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_toLeftOf="@id/valuation_xiaoshoujiage_right_text"
+                    android:layout_toRightOf="@id/valuation_xiaoshoujiage_icon"
+                    app:floatLabelTextAppearance="@style/TextAppearance.YourApp.FloatLabel" >
+
+                    <EditText
+                        android:id="@+id/valuation_xiaoshoujiage_edit"
+                        style="@style/common_edit_input_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/valuation_item_right_width"
+                        android:layout_marginRight="@dimen/valuation_item_right_width"
+                        android:background="@null"
+                        android:hint="销售价格"
+                        android:inputType="numberDecimal"
+                        android:maxLength="6"
+                        android:paddingLeft="@dimen/valuation_item_right_width"
+                        android:paddingRight="@dimen/valuation_item_right_width"
+                        android:singleLine="true" >
+                    </EditText>
+                </com.jzg.jzgcarsource.view.FloatLabelLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/btn_adjust_price_bottom_reset"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="@color/orange"
+                    android:padding="10dp"
+                    android:text="重置"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/btn_adjust_price_bottom_submit"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="@color/blue"
+                    android:padding="10dp"
+                    android:text="提交"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="10dp" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
